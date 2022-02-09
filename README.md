@@ -37,6 +37,12 @@
 
 The Lens Protocol is a decentralized, non-custodial social graph. Lens implements unique, on-chain social interaction mechanisms analogous to commonly understood Web2 social media interactions, but significantly expanded with unique functionality that empower communities to form and participants to own their own social graph.
 
+
+### Notes
+As a quick recap, we've successfully spun up our own blockchain, deployed the protocol locally, created a profile, published a post, and followed the profile; and collected a post.
+
+See [primer](https://docs.lens.dev/docs/primer)
+
 ## Setup
 
 The environment is built using Docker Compose, note that your `.env` file must have an `ALCHEMY_KEY` or an `INFURA_KEY` variable, and an optional `MNEMONIC` and `ETHERSCAN_KEY`, defined like so:
@@ -188,7 +194,3 @@ Lastly, there is also a `ModuleGlobals` contract which acts as a central data pr
 This iteration of the Lens Protocol implements a transparent upgradeable proxy for the central hub to be controlled by governance. There are no other aspects of the protocol that are upgradeable. In an ideal world, the hub will not require upgrades due to the system's inherent modularity and openness, upgradeability is there only to implement new, breaking changes that would be impossible, or unreasonable to implement otherwise.
 
 This does come with a few caveats, for instance, the `ModuleGlobals` contract implements a currency whitelist, but it is not upgradeable, so the "removal" of a currency whitelist in a module would require a specific new module that does not query the `ModuleGlobals` contract for whitelisted currencies.
-
-
-### Notes
-As a quick recap, we've successfully spun up our own blockchain, deployed the protocol locally, created a profile, published a post, and followed the profile; and collected a post.
